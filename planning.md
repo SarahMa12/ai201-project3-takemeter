@@ -92,3 +92,15 @@ To balance efficiency and accuracy, I will use both AI (Claude) and human review
 After evaluating the model, I will review all misclassified comments to understand where it struggles. I will provide the incorrect predictions to Claude 3.5 Sonnet to identify which labels are being confused and suggest possible reasons. I will then manually verify these patterns by looking for shared characteristics, such as word choice, tone, or comment length.
 
 The findings from this error analysis will be included in the final report to explain the model's limitations and highlight the challenges of classifying different types of community discussions.
+
+## Examples that were difficult to label
+1. Row 168 — "I hate season 11" (labeled `hot_take`)
+The post starts with strong emotion, which made me consider `reaction`. But `reaction` should respond to a specific event, and this doesn't. Instead, the author argues that the game's meta rewards passive play and punishes roaming. Since those claims are opinions without evidence, I labeled it `hot_take`, although it was a close call.
+
+---
+2. Row 173 — Jaksho/Heartsteel rant (labeled `reaction`)
+This almost became `analysis` because the author explains why healing is stronger, saying tanks and bruisers stay alive long enough to trigger more healing. However, the post is mostly based on one personal game and ends as a frustrated rant rather than a broader analysis. I kept it as `reaction`, but this was the label I was least confident about.
+
+---
+3. Row 152 — ADC power vs. agency (labeled `analysis`)
+The author makes a clear distinction between power (damage) and agency (impact on the game), giving the post a structured argument. Even though it doesn't include statistics or other evidence, the reasoning is organized enough that I labeled it `analysis`. Still, `hot_take` would also have been a reasonable choice.
